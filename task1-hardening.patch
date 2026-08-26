@@ -1,3 +1,4 @@
+git add -A
 diff --git a/backend/.env.example b/backend/.env.example
 new file mode 100644
 index 0000000..581724f
