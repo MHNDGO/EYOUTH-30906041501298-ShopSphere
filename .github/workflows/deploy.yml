@@ -1,4 +1,4 @@
-git add -Aname: ShopSphere CI/CD
+name: ShopSphere CI/CD
 
 on:
   push:
