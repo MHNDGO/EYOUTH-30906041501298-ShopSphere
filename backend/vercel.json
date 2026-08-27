@@ -1,9 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/index.js", "use": "@vercel/node" }
+    { "src": "api/index.js", "use": "@vercel/node" },
+    { "src": "api/serverless/prune-logs.js", "use": "@vercel/node" }
   ],
   "routes": [
+    { "src": "/api/serverless/prune-logs", "dest": "api/serverless/prune-logs.js" },
     { "src": "/(.*)", "dest": "api/index.js" }
   ]
 }
