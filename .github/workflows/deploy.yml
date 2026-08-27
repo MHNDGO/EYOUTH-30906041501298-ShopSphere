@@ -21,6 +21,7 @@ jobs:
       - name: Build (Prisma Client generation)
         run: npx prisma generate
       - name: Deploy to Vercel (production)
+        working-directory: .
         run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
           VERCEL_ORG_ID: team_WGmXHGpnARqfsIw7sELd8tWb
@@ -44,6 +45,7 @@ jobs:
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
       - name: Deploy to Vercel (production)
+        working-directory: .
         run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
           VERCEL_ORG_ID: team_WGmXHGpnARqfsIw7sELd8tWb
@@ -65,6 +67,7 @@ jobs:
       - name: Build (syntax check)
         run: node --check src/app.js
       - name: Deploy to Vercel (production)
+        working-directory: .
         run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
           VERCEL_ORG_ID: team_WGmXHGpnARqfsIw7sELd8tWb
